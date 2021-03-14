@@ -1,9 +1,11 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const getStaticPaths = async () => {
     const res = await fetch('https://nextdbapp.herokuapp.com/flavors/')
     const data = await res.json()
+    console.log(data)
 
     const paths = data.map(pizza => {
         return {
@@ -30,7 +32,7 @@ export const getStaticProps = async (context) => {
 const Details = ({ pizza }) => {
     return ( 
         <motion.div exit={{ opacity: 0 }}>
-            <img src={'https://nextdbapp.herokuapp.com/flavors/' + pizza.image.url} />
+            <Image src="/images/pngwave (26).png" width={250} height={250} />
             <h1>{pizza.title}</h1>
             <p>{pizza.description}</p>
             <p>Post criado em: {pizza.published_at} </p>

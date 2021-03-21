@@ -32,7 +32,9 @@ export const getStaticProps = async (context) => {
 const Details = ({ pizza }) => {
     return ( 
         <motion.div exit={{ opacity: 0 }}>
-            <Image src="/images/pngwave (26).png" width={250} height={250} />
+            <img src={'https://nextdbapp.herokuapp.com' + pizza.image[0].url} width="250"/>
+            
+          
             <h1>{pizza.title}</h1>
             <p>{pizza.description}</p>
             <p>Post criado em: {pizza.published_at} </p>

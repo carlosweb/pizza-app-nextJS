@@ -19,6 +19,8 @@ const Pizzas = ({ pizzas }) => {
                     <a>
                         <h2>{pizza.title}</h2>
                         <p>{pizza.description}</p>
+                
+
                     </a>
                 </Link>
             ))}

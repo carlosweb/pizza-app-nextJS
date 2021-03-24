@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 export const getStaticProps = async () => {
-    const res = await fetch('https://nextdbapp.herokuapp.com/flavors')
+    const res = await fetch('https://backend-strapi-api.herokuapp.com/flavors/')
     const data = await res.json()
 
     return {
@@ -17,7 +17,7 @@ const Pizzas = ({ pizzas }) => {
             {pizzas.map(pizza => (
                 <Link href={'/pizzas/' + pizza.id} key={pizza.id}>
                     <a>
-                        <h2>{pizza.title}</h2>
+                        <h2>{pizza.name}</h2>
                         <p>{pizza.description}</p>
                 
 
